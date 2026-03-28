@@ -27,5 +27,8 @@ src/
  └── app/           # Páginas e roteamento (Next.js App Router)
 ```
 
-## Interface do Projeto
--Em-breve imagens aqui-
+### Desktop
+![Preview Desktop](./public/screenshots/desktop-home.png)
+
+### Mobile
+<img src="./public/screenshots/mobile-home.png" width="300px" alt="Preview Mobile">
