@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Espaçamento para o conteúdo da matéria */
+.conteudo-materia p {
+  margin-bottom: 1rem; /* Distância entre parágrafos */
+  line-height: 1.5;      /* Altura da linha para não ficar apertado */
+  color: #333;
+}
+
+.conteudo-materia strong {
+  color: #1a1a1a;
+  font-weight: 800;
+}
+
+.conteudo-materia h2, .conteudo-materia h3 {
+  margin-top: 2rem;
+  margin-bottom: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.conteudo-materia ul {
+  list-style-type: disc !important; /* Força a bolinha aparecer */
+  padding-left: 1.5rem !important;  /* Dá o recuo para a direita */
+  margin-bottom: 1.5rem;            /* Espaço após a lista */
+  color: #333;
+}
+
+.conteudo-materia ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo para cada item da lista */
+.conteudo-materia li {
+  margin-bottom: 0.5rem; /* Espaço entre um candidato e outro */
+  line-height: 1.5;
+}
