@@ -44,6 +44,8 @@ export default function Footer() {
             <li><Link href="/" className="hover:underline">Página Inicial</Link></li>
             <li><span className="opacity-50"><Link href="/sobre">Sobre nós</Link></span></li>
             <li><span className="opacity-50">Apoie Aqui</span></li>
+            <li><span className="opacity-50"><Link href="/privacidade">Política de Privacidade</Link></span></li>
+            <li><span className="opacity-50"><Link href="/termos">Termos e Condições</Link></span></li>
           </ul>
         </div>
 
