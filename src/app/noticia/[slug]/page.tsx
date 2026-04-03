@@ -1,8 +1,6 @@
 import { StructuredText } from "react-datocms/structured-text";
 import React from "react";
 import { performRequest } from "../../../lib/datocms";
-import Navbar from "../../../components/Navbar";
-import Footer from "../../../components/Footer";
 import AdMateria from "../../../components/AdMateria";
 import { PostDato, RenderBlockProps } from "../../../types";
 import Link from "next/link";
@@ -99,7 +97,7 @@ const recomendados = recommendationsData.allPosts;
 
   return (
     <main className="min-h-screen bg-white">
-      <Navbar />
+      {/*<Navbar />*/}
 
       {/* AD TOPO (Banner) */}
       <div className="w-full bg-[#f0f0f0] py-8 flex justify-center border-b border-gray-200">
@@ -168,7 +166,7 @@ const recomendados = recommendationsData.allPosts;
         </section>
       </article>
 
-      <Footer />
+      {/*<Footer />*/}
     </main>
   );
 }

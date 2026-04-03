@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CardNoticia from "../components/CardNoticia";
 import { performRequest } from "../lib/datocms";
@@ -34,7 +33,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-white flex flex-col">
-      <Navbar />
+      {/*<Navbar />*/}
 
       {/* BANNER PRINCIPAL (Refatorado para Flexbox) */}
       {destaque && (
@@ -118,7 +117,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <Footer />
+      {/*<Footer />*/}
     </main>
   );
 }

@@ -1,11 +1,10 @@
 import Link from "next/link";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function NotFound() {
   return (
     <main className="min-h-screen bg-white flex flex-col">
-      <Navbar />
+      {/*<Navbar />*/}
 
       <section className="flex-grow flex flex-col items-center justify-center p-6 text-center">
         {/* Ícone ou Ilustração estilizada */}

@@ -1,6 +1,4 @@
 import { performRequest } from "../../../lib/datocms";
-import Navbar from "../../../components/Navbar";
-import Footer from "../../../components/Footer";
 import CardNoticia from "../../../components/CardNoticia";
 import { PostDato, NoticiaProps } from "../../../types";
 import { Fragment } from "react/jsx-runtime";
@@ -37,7 +35,7 @@ export default async function PageCategoria({ params }: { params: Promise<{ slug
 
   return (
     <main className="min-h-screen bg-white">
-      <Navbar />
+      {/* Navbar */}
 
       {/* ANÚNCIO (AD) - POSIÇÃO FIXA LOGO ABAIXO DA NAVBAR */}
       <div className="w-full bg-[#f0f0f0] py-8 flex justify-center border-b border-gray-200">
@@ -109,7 +107,7 @@ export default async function PageCategoria({ params }: { params: Promise<{ slug
         )}
       </section>
 
-      <Footer />
+      {/*<Footer />*/}
     </main>
   );
 }

@@ -4,7 +4,7 @@ import React from 'react';
 export default function SobreProjeto() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Reutilize sua Navbar aqui se quiser */}
+      {/* Navbar */}
       
       <div className="max-w-3xl mx-auto px-6 py-20">
         <h1 className="text-4xl font-black italic uppercase tracking-tighter border-l-8 border-[#E6C62F] pl-4 mb-8">
