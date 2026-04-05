@@ -1,4 +1,3 @@
-// src/app/loading.tsx
 import React from 'react';
 
 // Blocos que piscam sobre o fundo azul escuro do banner (cor azulada/cinza)
