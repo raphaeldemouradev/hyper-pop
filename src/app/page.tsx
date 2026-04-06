@@ -5,6 +5,7 @@ import { PostDato, NoticiaProps } from "../types";
 import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react/jsx-runtime";
+import AdTopHorizontal from "../components/ads/AdTopHorizontal";
 
 const HOME_QUERY = `
   query {
@@ -67,14 +68,9 @@ export default async function Home() {
           </div>
         </section>
       )}
+
       {/* ANÚNCIO (AD) - POSIÇÃO FIXA LOGO ABAIXO DO BANNER */}
-      <div className="w-full bg-[#f0f0f0] py-8 flex justify-center border-b border-gray-200">
-        <div className="w-[300px] h-[100px] md:w-[728px] md:h-[90px] bg-gray-300 flex items-center justify-center border border-gray-400">
-          <span className="text-gray-500 font-mono text-sm tracking-widest">
-            ANÚNCIO (AD)
-          </span>
-        </div>
-      </div>
+      <AdTopHorizontal />
 
       {/* SEÇÃO MAIS RECENTES (Feed de Nicho) */}
       <section className="max-w-7xl mx-auto px-6 py-8 w-full">

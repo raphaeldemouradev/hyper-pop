@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Footer from "../components/Footer";
 
 export default function NotFound() {
   return (
@@ -38,8 +37,6 @@ export default function NotFound() {
         {/* Detalhe estético: "chuvisco" de TV */}
         <div className="mt-12 w-24 h-1 bg-gradient-to-r from-transparent via-[#E6C62F] to-transparent opacity-50"></div>
       </section>
-
-      <Footer />
     </main>
   );
 }

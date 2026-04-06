@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import Image from "next/image";
 import CardNoticia from "@/src/components/CardNoticia";
+import AdTopHorizontal from "@/src/components/ads/AdTopHorizontal";
 
 const NOTICIA_QUERY = `
   query SinglePost($slug: String) {
@@ -100,11 +101,7 @@ const recomendados = recommendationsData.allPosts;
       {/*<Navbar />*/}
 
       {/* AD TOPO (Banner) */}
-      <div className="w-full bg-[#f0f0f0] py-8 flex justify-center border-b border-gray-200">
-        <div className="w-[300px] h-[80px] md:w-[728px] md:h-[90px] bg-gray-300 flex items-center justify-center border border-gray-400">
-           <span className="text-gray-500 font-mono text-sm tracking-widest">ANÚNCIO (AD)</span>
-        </div>
-      </div>
+      <AdTopHorizontal />
 
       <article className="max-w-4xl mx-auto px-6 py-8">
         <header className="mb-8">

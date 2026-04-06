@@ -23,34 +23,7 @@ export default function LoadingHome() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       
-      {/* --- NAVBAR LOADING --- */}
-      <nav className="w-full bg-[#1a1a1a] border-b border-[#E6C62F]/30 sticky top-0 z-50 h-16 shadow-lg">
-        <div className="max-w-7xl mx-auto px-5 h-full flex items-center justify-between">
-          
-          {/* LOGO */}
-          <div className="flex items-center">
-
-            {/* Div borda */}
-            <div className="flex border-2 border-[#9136be] tracking-tighter uppercase text-sm rounded">
-
-              {/* Parte "Hyper" - Fundo */}
-              <div className="bg-[#E6C62F] animate-pulse w-14 h-8 px-2 py-1"></div>
-
-              {/* Parte "POP" */}
-              <div className="bg-[#a23bd5] animate-pulse w-10 h-8 px-2 py-1"></div>
-              
-            </div>
-          </div>
-
-          {/* MENU HAMBÚRGUER */}
-          <div className="flex flex-col gap-1.5">
-            <div className="w-7 h-1 bg-[#E6C62F] animate-pulse rounded"></div>
-            <div className="w-7 h-1 bg-[#E6C62F] animate-pulse rounded"></div>
-            <div className="w-7 h-1 bg-[#E6C62F] animate-pulse rounded"></div>
-          </div>
-        </div>
-      </nav>
-      {/* --- FIM DA NAVBAR --- */}
+      {/* --- NAVBAR --- */}
 
       {/* --- QUADRO SUPERIOR (FUNDO AZUL ESCURO) --- */}
       <section className="relative w-full h-[60vh] md:h-[80vh] bg-[#1a2331] px-6 pt-12">

@@ -22,21 +22,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+    <head>
+        {/* SCRIPT GLOBAL DO ADSENSE (O que você acabou de me enviar) */}
+        <Script
+          id="adsense-init"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2300939406288493"
+          crossOrigin="anonymous"
+          strategy="afterInteractive" 
+        />
+
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-36CFNTYHNH" />
+        <Script id="google-analystics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-36CFNTYHNH');
+          `}
+        </ Script>
+      </head>
       <body>
-
-        <head>
-          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-36CFNTYHNH" />
-          <Script id="google-analystics">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-36CFNTYHNH');
-            `}
-          </ Script>
-        </head>
-
         <Navbar />
         {children}
         <Footer />
