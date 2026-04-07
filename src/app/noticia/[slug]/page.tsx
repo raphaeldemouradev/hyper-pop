@@ -1,7 +1,7 @@
 import { StructuredText } from "react-datocms/structured-text";
 import React from "react";
 import { performRequest } from "../../../lib/datocms";
-import AdMateria from "../../../components/AdMateria";
+import AdMateria from "../../../components/ads/AdMateria";
 import { PostDato, RenderBlockProps } from "../../../types";
 import Link from "next/link";
 import { Metadata } from "next";

@@ -25,7 +25,7 @@ export default function RootLayout({
     <head>
         {/* SCRIPT GLOBAL DO ADSENSE (O que você acabou de me enviar) */}
         <Script
-          id="adsense-init"
+          //id="adsense-init"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2300939406288493"
           crossOrigin="anonymous"

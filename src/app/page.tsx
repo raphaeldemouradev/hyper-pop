@@ -1,4 +1,3 @@
-import Footer from "../components/Footer";
 import CardNoticia from "../components/CardNoticia";
 import { performRequest } from "../lib/datocms";
 import { PostDato, NoticiaProps } from "../types";
@@ -6,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react/jsx-runtime";
 import AdTopHorizontal from "../components/ads/AdTopHorizontal";
+import AdPostGrid from "../components/ads/AdPostGrid";
 
 const HOME_QUERY = `
   query {
@@ -92,19 +92,31 @@ export default async function Home() {
               data: post.date,
             };
 
+            // Em operação
             return (
               <Fragment key={post.id}>
-                {/* Renderiza o Card da Notícia */}
                 <CardNoticia noticia={props} />
 
-                {/* Lógica: Se o índice + 1 for divisível por 3, insere o AD */}
+                {/* LÓGICA DE REPETIÇÃO PARA MOBILE (A cada 3 posts) */}
                 {(index + 1) % 3 === 0 && (
-                  <div className="col-span-1 md:col-span-2 lg:col-span-3 flex justify-center py-4">
-                    <div className="w-full h-[150px] bg-[#f9f9f9] border-2 border-dashed border-gray-300 flex items-center justify-center rounded-2xl">
-                      <span className="text-gray-400 font-bold tracking-widest uppercase text-xs">
-                        Anúncio (AD)
-                      </span>
-                    </div>
+                  <div className="block md:hidden col-span-1">
+                    <AdPostGrid type="mobile" />
+                  </div>
+                )}
+
+                {/* LÓGICA DE REPETIÇÃO PARA TABLET (A cada 4 posts) */}
+                {/* No tablet (2 colunas), ele aparece após 2 linhas completas (4 posts) */}
+                {(index + 1) % 4 === 0 && (
+                  <div className="hidden md:block lg:hidden col-span-2">
+                    <AdPostGrid type="tablet" />
+                  </div>
+                )}
+
+                {/* LÓGICA DE REPETIÇÃO PARA DESKTOP (A cada 6 posts) */}
+                {/* No PC (3 colunas), ele aparece após 2 linhas completas (6 posts) */}
+                {(index + 1) % 6 === 0 && (
+                  <div className="hidden lg:block col-span-3">
+                    <AdPostGrid type="desktop" />
                   </div>
                 )}
               </Fragment>

@@ -1,8 +1,12 @@
 "use client";
-import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import React, { useEffect } from "react";
 
-export default function AdTopHorizontal() {
+interface AdPostGridProps {
+  type: "mobile" | "tablet" | "desktop";
+}
+
+export default function AdPostGrid({ type }: AdPostGridProps) {
   const pathname = usePathname();
 
   useEffect(() => {
@@ -32,27 +36,33 @@ export default function AdTopHorizontal() {
     return () => clearTimeout(timer);
   }, [pathname]);
 
+  const configs = {
+    mobile: "block md:hidden col-span-1",
+    tablet: "hidden md:flex lg:hidden col-span-2",
+    desktop: "hidden lg:flex col-span-3",
+  };
+
   return (
-    <div className="w-full bg-[#ffffff] py-5 flex justify-center border-b border-gray-100">
-      
-      {/* CONTAINER PRINCIPAL: Altura máxima travada para NÃO ESTICAR */}
-      <div className="relative w-full bg-gray-200 flex flex-col items-center border border-gray-400 overflow-hidden rounded-md shadow-2x1 max-w-[320px] md:max-w-[728px] lg:max-w-[970px]]">
+    <div className={`${configs[type]} py-5 flex justify-center w-full`}>
+
+      {/* Container do Anúncio */}
+      <div className="relative w-full bg-gray-200 flex flex-col items-center border border-gray-400 overflow-hidden rounded-md shadow-2xl transition-all duration-300">
         
-        {/* FAIXA DE PUBLICIDADE: Dentro do bloco cinza e fixa no topo */}
+        {/* Label de Publicidade */}
         <div className="w-full bg-gray-400/30 border-b border-gray-400/50 py-1 flex justify-center shrink-0">
           <span className="text-gray-600 font-black text-[10px] tracking-[0.2em] uppercase">
-            Publicidade
+            Espaço Publicitário
           </span>
         </div>
 
-        {/* ÁREA DO ANÚNCIO: Forçamos o Google a respeitar o espaço horizontal */}
-        <div className="w-full flex justify-center items-center min-h-[100px] md:min-h-[90px]">
+        {/* Área do Anúncio */}
+        <div className="w-full flex justify-center items-center min-h-[180px] md:min-h-[250px]">
           <ins
             className="adsbygoogle"
-            style={{ display: "block"}}
+            style={{ display: "block" }}
             data-ad-client="ca-pub-2300939406288493"
-            data-ad-slot="4911597279"
-            data-ad-format="auto"
+            data-ad-slot="2708203827"
+            data-ad-format="auto"  
             data-full-width-responsive="true"
           />
         </div>
