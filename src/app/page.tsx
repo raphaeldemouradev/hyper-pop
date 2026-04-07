@@ -47,7 +47,7 @@ export default async function Home() {
                 alt={destaque.title || "Imagem de destaque"}
                 fill
                 className="object-cover object-center opacity-70 transition-opacity duration-700"
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, 1200px"
                 priority
                 quality={75}
               />
