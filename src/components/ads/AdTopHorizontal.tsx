@@ -21,8 +21,7 @@ export default function AdTopHorizontal() {
           }
         }
       } catch (err) {
-        // Log leve para não poluir o console do usuário final
-        console.warn("AdSense: Aguardando renderização do slot.");
+        console.warn("AdSense: Aguardando renderização do slot." + err);
       }
     };
 

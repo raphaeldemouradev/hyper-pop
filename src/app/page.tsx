@@ -38,7 +38,7 @@ export default async function Home() {
 
       {/* BANNER PRINCIPAL (Refatorado para Flexbox) */}
       {destaque && (
-        <section className="relative w-full h-[60vh] md:h-[80vh] bg-gray-900 overflow-hidden flex flex-col justify-end p-6 md:p-12">
+        <section className="relative w-full h-[50vh] md:h-[70vh] bg-gray-900 overflow-hidden flex flex-col justify-end p-6 md:p-12">
           {/* Imagem de Fundo (Mantemos absoluta para não ocupar espaço no fluxo do Flex) */}
           <div className="absolute inset-0 z-0">
             {destaque.image?.url ? (
@@ -47,7 +47,7 @@ export default async function Home() {
                 alt={destaque.title || "Imagem de destaque"}
                 fill
                 className="object-cover object-center opacity-70 transition-opacity duration-700"
-                sizes="(max-width: 768px) 100vw, 1200px"
+                sizes="100vh"
                 priority
                 quality={75}
               />

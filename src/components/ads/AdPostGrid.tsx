@@ -25,8 +25,7 @@ export default function AdPostGrid({ type }: AdPostGridProps) {
           }
         }
       } catch (err) {
-        // Log leve para não poluir o console do usuário final
-        console.warn("AdSense: Aguardando renderização do slot.");
+        console.warn("AdSense: Aguardando renderização do slot." + err);
       }
     };
 
@@ -51,7 +50,7 @@ export default function AdPostGrid({ type }: AdPostGridProps) {
         {/* Label de Publicidade */}
         <div className="w-full bg-gray-400/30 border-b border-gray-400/50 py-1 flex justify-center shrink-0">
           <span className="text-gray-600 font-black text-[10px] tracking-[0.2em] uppercase">
-            Espaço Publicitário
+            Publicidade
           </span>
         </div>
 
