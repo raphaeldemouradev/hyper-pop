@@ -19,6 +19,8 @@ const NOTICIA_QUERY = `
       description
       image {
         url
+        title
+        alt
       }
       content {
         value
@@ -31,6 +33,7 @@ const NOTICIA_QUERY = `
   }
 `;
 
+{/* Metadata */}
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const resolvedParams = await params;
   const data = await performRequest({ 
@@ -57,6 +60,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
+{/* CONTEUDO */}
 export default async function PageNoticia({ params }: { params: Promise<{ slug: string }> | { slug: string } }) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug; 
@@ -66,8 +70,7 @@ export default async function PageNoticia({ params }: { params: Promise<{ slug: 
     variables: { slug: slug } 
   });
 
-  const noticia: PostDato = data.post;
-
+const noticia: PostDato = data.post;
 // BUSCA SEM MEXER NO GRAPHQL ORIGINAL
 // Criamos uma query rápida só para pegar as recomendações da mesma categoria
 const recommendationsData = await performRequest({
@@ -92,9 +95,10 @@ const recommendationsData = await performRequest({
 
 const recomendados = recommendationsData.allPosts;
 
-  if (!noticia) {
-    return <div className="p-20 text-center font-bold">Notícia não encontrada.</div>;
-  }
+// Not Found
+if (!noticia) {
+  return <div className="p-20 text-center font-bold">Notícia não encontrada.</div>;
+}
 
   return (
     <main className="min-h-screen bg-white">
@@ -118,24 +122,37 @@ const recomendados = recommendationsData.allPosts;
           </p>
         </header>
 
-        <div className="relative w-full h-[300px] md:h-[500px] mb-10 overflow-hidden rounded-2xl shadow-xl bg-gray-100">
-          {noticia.image?.url && (
-            <Image src={noticia.image.url} alt={noticia.title} fill className="object-cover object-top" priority />
+        <figure>
+          <div className="relative w-full h-[300px] md:h-[500px] mb-10 overflow-hidden rounded-2xl shadow-xl bg-gray-100">
+            {noticia.image?.url && (
+              <Image
+                src={noticia.image.url}
+                alt={noticia.title}
+                fill 
+                className="object-cover object-top"
+                priority />
+              )}
+          </div>
+          {/* CRÉDITO DA IMAGEM ABAIXO */}
+          {noticia.image?.author && (
+            <figcaption className="text-[10px] uppercase tracking-widest text-gray-400 mt-3 text-right italic font-medium">
+              Foto: <span className="text-gray-600">{noticia.image.author}</span>
+            </figcaption>
           )}
-        </div>
+        </figure>
 
+        {/* Anuncio AD do Dato */}
         <div className="conteudo-materia max-w-none">
-          <StructuredText 
-            data={noticia.content} 
-            // 1. RENDERIZAR OS BLOCOS (Onde você arrastou o Anuncio no Dato)
-            renderBlock={({ record }: RenderBlockProps ) => {
-              if (record.__typename === "AnuncioRecord") {
-                return <AdMateria />;
-              }
-              return null;
-            }}
-          />
-        </div>
+        <StructuredText 
+          data={noticia.content} 
+          renderBlock={({ record }: RenderBlockProps) => {
+            if (record.__typename === "AnuncioRecord") {
+              return <AdMateria key={record.id} />;
+            }
+            return null;
+          }}
+        />
+      </div>
         
         {/* Seção de Recomendados usando seu componente CardNoticia */}
         <section className="max-w-4xl mx-auto py-12 border-t border-gray-100">

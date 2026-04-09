@@ -36,7 +36,7 @@ export default async function Home() {
     <main className="min-h-screen bg-white flex flex-col">
       {/*<Navbar />*/}
 
-      {/* BANNER PRINCIPAL (Refatorado para Flexbox) */}
+      {/* BANNER PRINCIPAL */}
       {destaque && (
         <section className="relative w-full h-[50vh] md:h-[70vh] bg-gray-900 overflow-hidden flex flex-col justify-end p-6 md:p-12">
           {/* Imagem de Fundo (Mantemos absoluta para não ocupar espaço no fluxo do Flex) */}
@@ -92,9 +92,9 @@ export default async function Home() {
               data: post.date,
             };
 
-            // Em operação
             return (
               <Fragment key={post.id}>
+                {/* Renderiza o Card */}
                 <CardNoticia noticia={props} />
 
                 {/* LÓGICA DE REPETIÇÃO PARA MOBILE (A cada 3 posts) */}
