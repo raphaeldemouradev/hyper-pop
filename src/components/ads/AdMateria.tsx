@@ -13,7 +13,7 @@ export default function AdMateria() {
   
           if (typeof window !== "undefined" && adsbygoogle) {
             // Selecionamos o elemento específico deste slot
-            const adElement = document.querySelector(`[data-ad-slot="4911597279"]`);
+            const adElement = document.querySelector(`[data-ad-slot="7614784252"]`);
             
             // Só disparar se o elemento existir e já tiver largura no layout
             if (adElement && (adElement as HTMLElement).clientWidth > 0) {
