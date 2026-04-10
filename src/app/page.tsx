@@ -17,7 +17,7 @@ const HOME_QUERY = `
       category
       date
       image {
-        url
+        url(imgixParams: { fit: crop, w:578, h:384, auto:format})
       }
     }
   }
@@ -38,34 +38,38 @@ export default async function Home() {
 
       {/* BANNER PRINCIPAL */}
       {destaque && (
-        <section className="relative w-full h-[50vh] md:h-[70vh] bg-gray-900 overflow-hidden flex flex-col justify-end p-6 md:p-12">
-          {/* Imagem de Fundo (Mantemos absoluta para não ocupar espaço no fluxo do Flex) */}
-          <div className="absolute inset-0 z-0">
+        <section className="w-full bg-gray-900 flex flex-col items-center">
+
+          {/* Link que envolve tudo e cria o container relativo */}
+          <Link 
+            href={`/noticia/${destaque.slug}`} 
+            className="group relative block w-full max-w-full h-[65vh] overflow-hidden shadow-xl bg-gray-900"
+          >
             {destaque.image?.url ? (
               <Image
                 src={destaque.image.url}
                 alt={destaque.title || "Imagem de destaque"}
-                fill
-                className="object-cover object-center opacity-70 transition-opacity duration-700"
-                sizes="100vh"
+                width={578}
+                height={384}
+                className="w-full h-full object-cover hover:scale-101"
                 priority
                 quality={75}
-              />
-            ) : (
-              <div className="w-full h-full bg-gray-900" />
-            )}
-            {/* Overlay escuro integrado ao container da imagem */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-          </div>
+          />
+          ) : (
+            <div className="w-full h-full bg-gray-900" />
+          )}
+          
 
-          {/* Conteúdo do Hero (Agora controlado pelo Flex do pai) */}
-          <div className="relative z-10 max-w-4xl">
-            <Link href={`/noticia/${destaque.slug}`} className="group">
-              <h1 className="text-white text-3xl md:text-6xl font-black leading-tight uppercase italic tracking-tighter decoration-[#E6C62F] underline underline-offset-8 decoration-4 group-hover:text-[#E6C62F] transition-colors">
+          {/* TEXTO do Hero */}
+          <div className="absolute bottom-0 left-0 w-full p-6 md:p-8">
+            <div className="max-w-md">
+              <h1 className="text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] text-2xl md:text-3xl font-black leading-tight uppercase italic tracking-tighter decoration-[#E6C62F] underline underline-offset-4 decoration-4 group-hover:text-[#E6C62F] transition-colors">
                 {destaque.title}
               </h1>
-            </Link>
+            </div>
           </div>
+
+          </Link>
         </section>
       )}
 

@@ -24,7 +24,6 @@ export default function CardNoticia({ noticia }: CardNoticiaComponentProps) {
             className="object-cover object-top transform group-hover:scale-105 transition-transform duration-700"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             quality={75}
-            // Aqui NÃO usamos priority, para o navegador carregar conforme o scroll
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs italic">
