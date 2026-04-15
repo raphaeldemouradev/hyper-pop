@@ -1,6 +1,6 @@
-import CardNoticia from "../components/CardNoticia";
 import { performRequest } from "../lib/datocms";
 import { PostDato, NoticiaProps } from "../types";
+import CardNoticia from "../components/CardNoticia";
 import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react/jsx-runtime";
@@ -49,8 +49,7 @@ export default async function Home() {
               <Image
                 src={destaque.image.url}
                 alt={destaque.title || "Imagem de destaque"}
-                width={578}
-                height={384}
+                fill
                 className="w-full h-full object-cover hover:scale-101"
                 priority
                 quality={75}

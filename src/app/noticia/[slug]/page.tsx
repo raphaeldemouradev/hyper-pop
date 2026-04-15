@@ -17,6 +17,7 @@ const NOTICIA_QUERY = `
       category
       date
       description
+      credit
       image {
         url
         title
@@ -134,9 +135,9 @@ if (!noticia) {
               )}
           </div>
           {/* CRÉDITO DA IMAGEM ABAIXO */}
-          {noticia.image?.author && (
-            <figcaption className="text-[10px] uppercase tracking-widest text-gray-400 mt-3 text-right italic font-medium">
-              Foto: <span className="text-gray-600">{noticia.image.author}</span>
+          {noticia.credit && (
+            <figcaption className="text-[10px] uppercase tracking-widest text-gray-400 mt-3 text-left italic font-medium">
+              Foto: <span className="text-gray-600">{noticia.credit}</span>
             </figcaption>
           )}
         </figure>
@@ -172,7 +173,8 @@ if (!noticia) {
                   descricao: item.description,
                   categoria: item.category,
                   slug: item.slug,
-                  data: item.date
+                  data: item.date,
+                  credit: item.credit,
                 }} 
               />
             ))}
