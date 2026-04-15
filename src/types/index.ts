@@ -10,7 +10,7 @@ export interface NoticiaProps {
   categoria: string;
   slug: string;
   data: string;
-  credit: string;
+  credit?: string;
 }
 
 // Props para a função renderBlock do StructuredText - Ajustado para ser genérico
@@ -26,7 +26,7 @@ export interface PostDato {
   slug: string;
   category: string;
   date: string;
-  credit: string;
+  credit?: string;
   image: { url: string };
   content: {
     value: StructuredTextDocument;
