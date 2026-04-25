@@ -130,7 +130,7 @@ if (!noticia) {
                 src={noticia.image.url}
                 alt={noticia.title}
                 fill 
-                className="object-cover object-top"
+                className="object-contain"
                 priority />
               )}
           </div>
