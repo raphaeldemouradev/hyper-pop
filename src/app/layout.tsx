@@ -10,9 +10,19 @@ export const metadata: Metadata = {
     template: "%s | Hyper Pop" // Isso adiciona o nome do site automaticamente em todas as páginas
   },
   description: "As melhores notícias de Esportes, Entretenimento e Videogame.",
-  keywords: ["Hyper Pop", "hyper-pop", "hyper-pop-blog", "notícias de entretenimento", "últimas notícias de esportes", "games e tecnologia", "curitiba", "futebol", "lançamento de games", "portal de notícias"],
   authors: [{ name: "Raphael" }],
-  robots: "index, follow", // Diz ao Google para ler o site
+  keywords: ["Hyper Pop", "hyper-pop", "hyper-pop-blog", "notícias de entretenimento", "últimas notícias de esportes", "games e tecnologia", "curitiba", "futebol", "lançamento de games", "portal de notícias"],
+  robots: {
+    index: true, 
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    }
+  },
 };
 
 export default function RootLayout({
