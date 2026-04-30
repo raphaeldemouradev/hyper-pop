@@ -29,7 +29,7 @@ export default async function Home() {
   const data = await performRequest({ query: HOME_QUERY });
   const noticias: PostDato[] = data.allPosts;
 
-  const destaque = noticias[1];
+  const destaque = noticias[0];
   const maisRecentes = noticias.slice(1);
 
   return (
