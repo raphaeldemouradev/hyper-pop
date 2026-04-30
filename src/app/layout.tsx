@@ -23,16 +23,16 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
     <head>
-        {/* SCRIPT GLOBAL DO ADSENSE (O que você acabou de me enviar) */}
+        {/* SCRIPT GLOBAL DO ADSENSE */}
         <Script
-          //id="adsense-init"
+          id="adsense-init"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2300939406288493"
           crossOrigin="anonymous"
           strategy="afterInteractive" 
         />
 
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-36CFNTYHNH" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-36CFNTYHNH" />
         <Script id="google-analystics">
           {`
             window.dataLayer = window.dataLayer || [];
