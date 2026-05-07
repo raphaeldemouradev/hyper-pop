@@ -43,6 +43,7 @@ export default function RootLayout({
         />
 
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-36CFNTYHNH" />
+
         <Script id="google-analystics">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -52,6 +53,8 @@ export default function RootLayout({
             gtag('config', 'G-36CFNTYHNH');
           `}
         </ Script>
+
+        <meta name="google-site-verification: googleeb2e1cb21d2dc6e2" />
       </head>
       <body>
         <Navbar />
