@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Fragment } from "react/jsx-runtime";
 import AdTopHorizontal from "../components/ads/AdTopHorizontal";
 import AdPostGrid from "../components/ads/AdPostGrid";
+import HeroSection from "../components/hero/HeroSection";
 
 const HOME_QUERY = `
   query {
@@ -34,44 +35,9 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-white flex flex-col">
-      {/*<Navbar />*/}
-
       {/* BANNER PRINCIPAL */}
-      {destaque && (
-        <section className="w-full bg-gray-900 flex flex-col items-center">
-
-          {/* Link que envolve tudo e cria o container relativo */}
-          <Link 
-            href={`/noticia/${destaque.slug}`} 
-            className="group relative block w-full max-w-full h-[65vh] overflow-hidden shadow-xl bg-gray-900"
-          >
-            {destaque.image?.url ? (
-              <Image
-                src={destaque.image.url}
-                alt={destaque.title || "Imagem de destaque"}
-                fill
-                className="w-full h-full object-cover hover:scale-101"
-                priority
-                quality={75}
-          />
-          ) : (
-            <div className="w-full h-full bg-gray-900" />
-          )}
-          
-
-          {/* TEXTO do Hero */}
-          <div className="absolute bottom-0 left-0 w-full p-6 md:p-8">
-            <div className="max-w-md">
-              <h1 className="text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] text-2xl md:text-3xl font-black leading-tight uppercase italic tracking-tighter decoration-[#E6C62F] underline underline-offset-4 decoration-4 group-hover:text-[#E6C62F] transition-colors">
-                {destaque.title}
-              </h1>
-            </div>
-          </div>
-
-          </Link>
-        </section>
-      )}
-
+      <HeroSection />
+      
       {/* ANÚNCIO (AD) - POSIÇÃO FIXA LOGO ABAIXO DO BANNER */}
       <AdTopHorizontal />
 
