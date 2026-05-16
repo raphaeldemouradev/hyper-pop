@@ -1,8 +1,6 @@
 import { performRequest } from "../lib/datocms";
 import { PostDato, NoticiaProps } from "../types";
 import CardNoticia from "../components/CardNoticia";
-import Link from "next/link";
-import Image from "next/image";
 import { Fragment } from "react/jsx-runtime";
 import AdTopHorizontal from "../components/ads/AdTopHorizontal";
 import AdPostGrid from "../components/ads/AdPostGrid";
@@ -30,7 +28,6 @@ export default async function Home() {
   const data = await performRequest({ query: HOME_QUERY });
   const noticias: PostDato[] = data.allPosts;
 
-  const destaque = noticias[0];
   const maisRecentes = noticias.slice(1);
 
   return (
@@ -61,10 +58,14 @@ export default async function Home() {
               data: post.date,
             };
 
+            const isSecondPost = index === 0;
+
             return (
               <Fragment key={post.id}>
                 {/* Renderiza o Card */}
-                <CardNoticia noticia={props} />
+                <div className={isSecondPost ? "block lg:hidden" : "block"}>
+                  <CardNoticia noticia={props} />
+                </div>
 
                 {/* LÓGICA DE REPETIÇÃO PARA MOBILE (A cada 3 posts) */}
                 {(index + 1) % 3 === 0 && (

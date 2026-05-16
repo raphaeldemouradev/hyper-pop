@@ -43,7 +43,8 @@ export default async function HeroSection() {
                 src={destaque.image.url}
                 alt={destaque.title || "Imagem de destaque"}
                 fill
-                priority
+                priority={true}
+                fetchPriority="high"
                 className="object-cover transition-transform group-hover:scale-101"
               />
 
