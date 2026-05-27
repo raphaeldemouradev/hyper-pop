@@ -42,8 +42,7 @@ export default function RootLayout({
           strategy="afterInteractive" 
         />
 
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-36CFNTYHNH" />
-
+        {/* Google Analytics */}
         <Script id="google-analystics">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -53,8 +52,9 @@ export default function RootLayout({
             gtag('config', 'G-36CFNTYHNH');
           `}
         </ Script>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-36CFNTYHNH" />
 
-        <meta name="google-site-verification: googleeb2e1cb21d2dc6e2" />
+        <meta name="google-site-verification" content="0TpD0oC29WOIG1l5wAPOgDNFPtIfVASLoiUkRDLZ2O0" />
       </head>
       <body>
         <Navbar />
