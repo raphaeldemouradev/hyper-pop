@@ -37,8 +37,6 @@ export default async function PageCategoria({ params }: { params: Promise<{ slug
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Navbar */}
-
       {/* Anuncio */}
       <AdTopHorizontal />
 

@@ -34,7 +34,7 @@ export default function AdMateria() {
   return (
     <div className="my-12 w-full flex flex-col items-center">
       {/* Etiqueta profissional conforme discutido */}
-      <span className="text-gray-300 font-sans text-[10px] tracking-[0.3em] mb-3 uppercase font-medium">
+      <span className="text-gray-600 font-sans text-[10px] tracking-[0.3em] mb-3 uppercase font-medium underline">
         Publicidade
       </span>
 

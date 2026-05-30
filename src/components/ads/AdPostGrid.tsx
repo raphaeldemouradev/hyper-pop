@@ -36,35 +36,39 @@ export default function AdPostGrid({ type }: AdPostGridProps) {
   }, [pathname]);
 
   const configs = {
-    mobile: "block md:hidden col-span-1",
+    mobile: "flex md:hidden col-span-1",
     tablet: "hidden md:flex lg:hidden col-span-2",
     desktop: "hidden lg:flex col-span-3",
   };
 
   return (
-    <div className={`${configs[type]} py-5 flex justify-center w-full`}>
+    /* A MÁGICA: O seletor [&:not(:has(...))]:!hidden força o container inteiro 
+      (inclusive a col-span do grid) a virar "display: none" caso o anúncio não esteja preenchido.
+    */
+    <div className={`${configs[type]} justify-center w-full [&:not(:has(ins[data-ad-status='filled']))]:!hidden py-4`}>
 
-      {/* Container do Anúncio */}
-      <div className="relative w-full bg-gray-200 flex flex-col items-center border border-gray-400 overflow-hidden rounded-md shadow-2xl transition-all duration-300">
+      {/* Container do Anúncio: Removido bordas rígidas e fundo cinza que causavam visual de "site incompleto" */}
+      <div className="w-full flex flex-col items-center overflow-hidden transition-all duration-300">
         
-        {/* Label de Publicidade */}
-        <div className="w-full bg-gray-400/30 border-b border-gray-400/50 py-1 flex justify-center shrink-0">
-          <span className="text-gray-600 font-black text-[10px] tracking-[0.2em] uppercase">
+        {/* Label de Publicidade: Só aparece se o anúncio de baixo for carregado */}
+        <div className="w-full flex justify-center pb-1">
+          <span className="text-gray-600 font-bold text-[10px] tracking-[0.2em] uppercase underline">
             Publicidade
           </span>
         </div>
 
-        {/* Área do Anúncio */}
-        <div className="w-full flex justify-center items-center min-h-[180px] md:min-h-[250px]">
+       {/* Área do Anúncio: Deixamos o tamanho fluido para o Google escolher o melhor formato nativo */}
+        <div className="w-full flex justify-center items-center">
           <ins
             className="adsbygoogle"
-            style={{ display: "block" }}
+            style={{ display: "block", minWidth: "250px" }}
             data-ad-client="ca-pub-2300939406288493"
             data-ad-slot="2708203827"
-            data-ad-format="auto"  
-            data-full-width-responsive="true"
+            data-ad-format="fluid" // Alterado para fluid, perfeito para blocos que ficam no meio de feeds de notícias
+            data-ad-layout-key="-6t+ed+2i-1n-4w" // Ajuda o AdSense a mesclar o anúncio nativo com o design dos seus posts
           />
         </div>
+        
       </div>
     </div>
   );
