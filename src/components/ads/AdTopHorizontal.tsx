@@ -32,29 +32,31 @@ export default function AdTopHorizontal() {
   }, [pathname]);
 
   return (
-    <div className="w-full bg-[#ffffff] py-5 flex justify-center border-b border-gray-100">
+    // O container principal monitora os filhos. Se o AdSense estiver vazio, ele não ocupa espaço na tela.
+    <div className="w-full flex justify-center [&:not(:has(ins[data-ad-status='filled']))]:hidden py-4 border-b border-gray-100">
       
       {/* CONTAINER PRINCIPAL: Altura máxima travada para NÃO ESTICAR */}
-      <div className="relative w-full bg-gray-200 flex flex-col items-center border border-gray-400 overflow-hidden rounded-md shadow-2x1 max-w-[320px] md:max-w-[728px] lg:max-w-[970px]]">
+      <div className="w-full flex flex-col items-center max-w-[320px] md:max-w-[728px] lg:max-w-[970px]">
         
-        {/* FAIXA DE PUBLICIDADE: Dentro do bloco cinza e fixa no topo */}
-        <div className="w-full bg-gray-400/30 border-b border-gray-400/50 py-1 flex justify-center shrink-0">
-          <span className="text-gray-600 font-black text-[10px] tracking-[0.2em] uppercase">
+        {/* FAIXA DE PUBLICIDADE: Agora ela fica solta no topo, sem bloco cinza em volta */}
+        <div className="w-full flex justify-center pb-1">
+          <span className="text-gray-600 font-bold text-[10px] tracking-[0.2em] uppercase">
             Publicidade
           </span>
         </div>
 
-        {/* ÁREA DO ANÚNCIO: Forçamos o Google a respeitar o espaço horizontal */}
-        <div className="w-full flex justify-center items-center min-h-[100px] md:min-h-[90px]">
+        {/* ÁREA DO ANÚNCIO: Sem background cinza, sem bordas pesadas. 100% limpo. */}
+        <div className="w-full flex justify-center items-center">
           <ins
             className="adsbygoogle"
-            style={{ display: "block"}}
+            style={{ display: "block", minWidth: "250px" }}
             data-ad-client="ca-pub-2300939406288493"
             data-ad-slot="4911597279"
-            data-ad-format="auto"
+            data-ad-format="horizontal" // Mudado de "auto" para "horizontal" para evitar que ele quebre o layout verticalmente
             data-full-width-responsive="true"
           />
         </div>
+        
       </div>
     </div>
   );
