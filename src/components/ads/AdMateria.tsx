@@ -25,35 +25,38 @@ export default function AdMateria() {
         }
       };
   
-      // Aumentado para 800ms para garantir que o layout do Hyper Pop se estabilize
-      const timer = setTimeout(pushAd, 500);
+      const timer = setTimeout(pushAd, 800);
       
       return () => clearTimeout(timer);
     }, [pathname]);
 
   return (
-    <div className="my-12 w-full flex flex-col items-center">
-      {/* Etiqueta profissional conforme discutido */}
-      <span className="text-gray-600 font-sans text-[10px] tracking-[0.3em] mb-3 uppercase font-medium underline">
+    /* A MÁGICA DO RECOLHIMENTO: 
+       Se o elemento <ins> não ganhar o status de preenchido pelo Google, 
+       esta div some por completo da matéria (:hidden com prioridade !important).
+    */
+    <div className="w-full flex flex-col items-center [&:not(:has(ins[data-ad-status='filled']))]:!hidden my-6 transition-all duration-300">
+      
+      {/* Etiqueta profissional suavizada e limpa (sem underline agressivo) */}
+      <span className="text-gray-400 font-sans text-[10px] tracking-[0.3em] mb-2 uppercase font-semibold">
         Publicidade
       </span>
 
-      {/* Espaço do Anúncio */}
-      <div className="w-full flex justify-center overflow-hidden min-h-[250px] bg-[#fdfdfd] border-y border-gray-50 py-4">
-        {/* Código Real do Google AdSense */}
+      {/* Espaço do Anúncio: Removido fundos artificiais e o min-h fixo de 250px */}
+      <div className="w-full flex justify-center overflow-hidden py-2">
         <ins
           className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-layout= "in-article"
-          data-ad-format= "auto"
-          data-ad-client= "ca-pub-2300939406288493"
-          data-ad-slot= "7614784252"   
+          style={{ display: "block", textDecoration: "none", width: "100%" }}
+          data-ad-layout="in-article" // Mantém o formato nativo otimizado para leitura entre parágrafos
+          data-ad-format="fluid" // O Google AdSense exige "fluid" para anúncios do tipo in-article funcionarem de forma 100% Flex
+          data-ad-client="ca-pub-2300939406288493"
+          data-ad-slot="7614784252"   
           data-full-width-responsive="true"   
         />
       </div>
 
-      {/* Linha decorativa sutil para separar do texto */}
-      <div className="w-24 h-[2px] bg-[#E6C62F]/30 mt-6"></div>
+      {/* Linha decorativa sutil de fechamento: Só aparece se o anúncio existir */}
+      <div className="w-24 h-[1px] bg-gray-200 mt-4"></div>
     </div>
   );
 }

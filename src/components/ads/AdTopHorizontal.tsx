@@ -52,7 +52,7 @@ export default function AdTopHorizontal() {
             style={{ display: "block", minWidth: "250px" }}
             data-ad-client="ca-pub-2300939406288493"
             data-ad-slot="4911597279"
-            data-ad-format="horizontal" // Mudado de "auto" para "horizontal" para evitar que ele quebre o layout verticalmente
+            data-ad-format="horizontal"
             data-full-width-responsive="true"
           />
         </div>
