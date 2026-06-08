@@ -42,10 +42,10 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-2 font-bold text-sm">
             <li><Link href="/" className="hover:underline">Página Inicial</Link></li>
-            <li><span className="opacity-50"><Link href="/sobre">Sobre nós</Link></span></li>
-            <li><span className="opacity-50">Apoie Aqui</span></li>
-            <li><span className="opacity-50"><Link href="/privacidade">Política de Privacidade</Link></span></li>
-            <li><span className="opacity-50"><Link href="/termos">Termos e Condições</Link></span></li>
+            <li><span className="opacity-50 hover:underline"><Link href="/sobre">Sobre nós</Link></span></li>
+            {/*<li><span className="opacity-50">Apoie Aqui</span></li>*/}
+            <li><span className="opacity-50 hover:underline"><Link href="/privacidade">Política de Privacidade</Link></span></li>
+            <li><span className="opacity-50 hover:underline"><Link href="/termos">Termos e Condições</Link></span></li>
           </ul>
         </div>
 
@@ -69,7 +69,7 @@ export default function Footer() {
       {/* LINHA FINAL DE DIREITOS */}
       <div className="border-t border-black/10 py-6">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-black uppercase tracking-widest">
-          <p>© 2026 Teste TV - Todos os direitos reservados</p>
+          <p>© 2026 Hyper pop - Todos os direitos reservados</p>
           <p>Desenvolvido por <Link href="https://www.linkedin.com/in/raphael-moura-dev/">Raphael de Moura</Link></p>
         </div>
       </div>
