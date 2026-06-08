@@ -66,7 +66,7 @@ export default function CookieBanner() {
             >
               Política de Privacidade
             </a>
-            e
+            {" e "}
             <a
               href="/termos"
               className="text-gray-900 underline font-semibold hover:text-gray-700"
