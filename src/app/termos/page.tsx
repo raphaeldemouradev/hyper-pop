@@ -4,9 +4,9 @@ export default function TermosUso() {
   `;
 
   return (
-    <main className="min-h-screen bg-white pt-24 px-6 pb-20">
+    <div className="min-h-screen bg-white pt-10 px-6 pb-20">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-black italic uppercase mb-8 border-l-8 border-[#E6C62F] pl-4">
+        <h1 className="text-3xl font-black italic uppercase mb-8">
           Termos e Condições
         </h1>
         <div 
@@ -14,6 +14,6 @@ export default function TermosUso() {
           dangerouslySetInnerHTML={{ __html: htmlTermos }} 
         />
       </div>
-    </main>
+    </div>
   );
 }
