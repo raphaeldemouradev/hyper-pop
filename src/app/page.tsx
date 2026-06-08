@@ -47,7 +47,7 @@ export default async function Home() {
         </div>
 
         {/* Grid de Cards conforme o Figma */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-star">
           {maisRecentes.map((post, index) => {
             const props: NoticiaProps = {
               titulo: post.title,
@@ -69,7 +69,7 @@ export default async function Home() {
 
                 {/* LÓGICA DE REPETIÇÃO PARA MOBILE (A cada 3 posts) */}
                 {(index + 1) % 3 === 0 && (
-                  <div className="block md:hidden col-span-1">
+                  <div className="block md:hidden col-span-1 w-full my-4">
                     <AdPostGrid type="mobile" />
                   </div>
                 )}
@@ -77,15 +77,15 @@ export default async function Home() {
                 {/* LÓGICA DE REPETIÇÃO PARA TABLET (A cada 4 posts) */}
                 {/* No tablet (2 colunas), ele aparece após 2 linhas completas (4 posts) */}
                 {(index + 1) % 4 === 0 && (
-                  <div className="hidden md:block lg:hidden col-span-2">
+                  <div className="hidden md:block lg:hidden col-span-2 w-full my-4">
                     <AdPostGrid type="tablet" />
                   </div>
                 )}
 
                 {/* LÓGICA DE REPETIÇÃO PARA DESKTOP (A cada 6 posts) */}
                 {/* No PC (3 colunas), ele aparece após 2 linhas completas (6 posts) */}
-                {(index + 1) % 6 === 0 && (
-                  <div className="hidden lg:block col-span-3">
+                {index === 6 && (
+                  <div className="hidden lg:block col-span-3 w-full my-6">
                     <AdPostGrid type="desktop" />
                   </div>
                 )}
