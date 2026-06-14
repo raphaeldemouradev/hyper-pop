@@ -102,8 +102,7 @@ if (!noticia) {
 }
 
   return (
-    <main className="min-h-screen bg-white">
-      {/*<Navbar />*/}
+    <div className="min-h-screen bg-white">
 
       {/* AD TOPO (Banner) */}
       <AdTopHorizontal />
@@ -124,7 +123,7 @@ if (!noticia) {
         </header>
 
         <figure>
-          <div className="relative w-full h-[300px] md:h-[500px] mb-10 overflow-hidden rounded-2xl shadow-xl bg-gray-100">
+          <div className="relative w-full h-[300px] md:h-[500px] overflow-hidden rounded-2xl shadow-xl bg-gray-100">
             {noticia.image?.url && (
               <Image
                 src={noticia.image.url}
@@ -182,8 +181,7 @@ if (!noticia) {
         </section>
       </article>
 
-      {/*<Footer />*/}
-    </main>
+    </div>
   );
 }
 
