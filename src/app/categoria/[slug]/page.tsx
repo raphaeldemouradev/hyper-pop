@@ -36,7 +36,7 @@ export default async function PageCategoria({ params }: { params: Promise<{ slug
   const noticiasFiltradas: PostDato[] = data.allPosts;
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* Anuncio */}
       <AdTopHorizontal />
 
@@ -116,7 +116,6 @@ export default async function PageCategoria({ params }: { params: Promise<{ slug
         )}
       </section>
 
-      {/*<Footer />*/}
-    </main>
+    </div>
   );
 }
