@@ -20,9 +20,9 @@ export default function Navbar() {
           
           {/* LOGO SKELETON (Igual para PC e Mobile) */}
           <div className="flex items-center">
-            <div className="flex border-2 border-[#9136be] tracking-tighter uppercase text-sm rounded overflow-hidden">
-              <div className="bg-[#E6C62F] animate-pulse w-14 h-8"></div>
-              <div className="bg-[#a23bd5] animate-pulse w-10 h-8"></div>
+            <div className="flex border-2 border-[#9136be] tracking-tighter uppercase text-sm rounded-full overflow-hidden">
+              <div className="bg-[#E6C62F] animate-pulse w-14 h-8 rounded-full"></div>
+              <div className="bg-[#a23bd5] animate-pulse w-10 h-8 rounded-full"></div>
             </div>
           </div>
 
@@ -32,13 +32,14 @@ export default function Navbar() {
             <div className="w-20 h-3 bg-gray-800 animate-pulse rounded"></div>
             <div className="w-24 h-3 bg-gray-800 animate-pulse rounded"></div>
             <div className="w-20 h-3 bg-gray-800 animate-pulse rounded"></div>
+            <div className="w-16 h-3 bg-gray-800 animate-pulse rounded"></div>
           </div>
 
           {/* --- SKELETON MOBILE (Aparece só no Celular) --- */}
           <div className="md:hidden flex flex-col gap-1.5">
-            <div className="w-7 h-1 bg-[#E6C62F] animate-pulse rounded opacity-50"></div>
-            <div className="w-7 h-1 bg-[#E6C62F] animate-pulse rounded opacity-50"></div>
-            <div className="w-7 h-1 bg-[#E6C62F] animate-pulse rounded opacity-50"></div>
+            <div className="w-7 h-1 bg-[#fff] animate-pulse rounded opacity-50"></div>
+            <div className="w-7 h-1 bg-[#fff] animate-pulse rounded opacity-50"></div>
+            <div className="w-7 h-1 bg-[#fff] animate-pulse rounded opacity-50"></div>
           </div>
 
         </div>
@@ -54,9 +55,9 @@ export default function Navbar() {
           
           {/* LOGO */}
           <Link href="/" className="flex items-center">
-            <div className="flex border-2 border-[#3a0048] font-black tracking-tighter uppercase text-sm">
-              <span className="bg-[#E6C62F] text-[#520052] px-2 py-1">Hyper</span>
-              <span className="bg-[#520052] text-[#E6C62F] px-2 py-1">pop</span>
+            <div className="flex border-2 border-[#3a0048] font-black tracking-tighter uppercase text-sm rounded-full overflow-hidden">
+              <span className="bg-[#E6C62F] text-[#520052] px-3 py-1">Hyper</span>
+              <span className="bg-[#520052] text-[#E6C62F] px-3 py-1">pop</span>
             </div>
           </Link>
 
@@ -66,6 +67,7 @@ export default function Navbar() {
             <li><Link href="/categoria/esportes" className="hover:text-[#E6C62F] transition-colors">Esportes</Link></li>
             <li><Link href="/categoria/entretenimento" className="hover:text-[#E6C62F] transition-colors">Entretenimento</Link></li>
             <li><Link href="/categoria/videogame" className="hover:text-[#E6C62F] transition-colors">Videogame</Link></li>
+            <li><Link href="/categoria/musica" className="hover:text-[#E6C62F] transition-colors">Música</Link></li>
           </ul>
 
           {/* BOTÃO MOBILE */}
@@ -73,9 +75,9 @@ export default function Navbar() {
             onClick={() => setIsOpen(true)}
             className="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none"
           >
-            <div className="w-7 h-1 bg-[#E6C62F]"></div>
-            <div className="w-7 h-1 bg-white"></div>
-            <div className="w-7 h-1 bg-[#E6C62F]"></div>
+            <div className="w-7 h-1 bg-white rounded-2xl"></div>
+            <div className="w-7 h-1 bg-white rounded-2xl"></div>
+            <div className="w-7 h-1 bg-white rounded-2xl"></div>
           </button>
         </div>
       </nav>
@@ -90,6 +92,7 @@ export default function Navbar() {
             <Link href="/categoria/esportes" onClick={closeMenu}>Esportes</Link>
             <Link href="/categoria/entretenimento" onClick={closeMenu}>Entretenimento</Link>
             <Link href="/categoria/videogame" onClick={closeMenu}>Videogame</Link>
+            <Link href="/categoria/musica" onClick={closeMenu}>Música</Link>
           </nav>
         </div>
       </aside>
