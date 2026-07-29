@@ -20,9 +20,9 @@ export default function Navbar() {
           
           {/* LOGO SKELETON (Igual para PC e Mobile) */}
           <div className="flex items-center">
-            <div className="flex border-2 border-[#9136be] tracking-tighter uppercase text-sm rounded-full overflow-hidden">
-              <div className="bg-[#E6C62F] animate-pulse w-14 h-8 rounded-full"></div>
-              <div className="bg-[#a23bd5] animate-pulse w-10 h-8 rounded-full"></div>
+            <div className="flex border-2 border-[#9136be] tracking-tighter uppercase text-sm rounded-lg overflow-hidden">
+              <div className="bg-[#E6C62F] animate-pulse w-14 h-8 rounded-rb-none"></div>
+              <div className="bg-[#a23bd5] animate-pulse w-10 h-8 rounded-bl-none"></div>
             </div>
           </div>
 
@@ -55,14 +55,14 @@ export default function Navbar() {
           
           {/* LOGO */}
           <Link href="/" className="flex items-center">
-            <div className="flex border-2 border-[#3a0048] font-black tracking-tighter uppercase text-sm rounded-full overflow-hidden">
+            <div className="flex border-2 border-[#3a0048] font-black tracking-tighter uppercase text-sm rounded-lg overflow-hidden">
               <span className="bg-[#E6C62F] text-[#520052] px-3 py-1">Hyper</span>
               <span className="bg-[#520052] text-[#E6C62F] px-3 py-1">pop</span>
             </div>
           </Link>
 
           {/* LINKS DESKTOP */}
-          <ul className="hidden md:flex items-center gap-5 text-[10px] font-black uppercase tracking-[0.2em] text-white">
+          <ul className="hidden md:flex items-center gap-5 text-[12px] font-black uppercase tracking-[0.2em] text-white md:pr-4 lg:pr-5">
             <li><Link href="/" className="hover:text-[#E6C62F] transition-colors">Home</Link></li>
             <li><Link href="/categoria/esportes" className="hover:text-[#E6C62F] transition-colors">Esportes</Link></li>
             <li><Link href="/categoria/entretenimento" className="hover:text-[#E6C62F] transition-colors">Entretenimento</Link></li>
@@ -75,9 +75,9 @@ export default function Navbar() {
             onClick={() => setIsOpen(true)}
             className="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none"
           >
-            <div className="w-7 h-1 bg-white rounded-2xl"></div>
-            <div className="w-7 h-1 bg-white rounded-2xl"></div>
-            <div className="w-7 h-1 bg-white rounded-2xl"></div>
+            <div className="w-7 h-1 bg-white rounded-2xl hover:bg-amber-200"></div>
+            <div className="w-7 h-1 bg-white rounded-2xl hover:bg-amber-200"></div>
+            <div className="w-7 h-1 bg-white rounded-2xl hover:bg-amber-200"></div>
           </button>
         </div>
       </nav>
