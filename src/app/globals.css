@@ -1,9 +1,19 @@
 @import "tailwindcss";
 
 /* Espaçamento para o conteúdo da matéria */
-.conteudo-materia h2, .conteudo-materia h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 5px;
+.conteudo-materia h2 {
+  font-size: 20px;
+  margin-top: 1.8rem;
+  margin-bottom: 6px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.conteudo-materia h3 {
+  font-size: 18px;
+  margin-top: 1.8rem;
+  margin-bottom: 6px;
   font-weight: 900;
   text-transform: uppercase;
   font-style: italic;

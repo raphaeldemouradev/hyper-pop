@@ -32,6 +32,7 @@ export default function Footer() {
             <li><Link href="/categoria/esportes" className="hover:underline">Esportes</Link></li>
             <li><Link href="/categoria/entretenimento" className="hover:underline">Entretenimento</Link></li>
             <li><Link href="/categoria/videogame" className="hover:underline">Videogame</Link></li>
+            <li><Link href="/categoria/musica" className="hover:underline">Musica</Link></li>
           </ul>
         </div>
 
