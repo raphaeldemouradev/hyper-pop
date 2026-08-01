@@ -117,19 +117,19 @@ if (!noticia) {
           <h1 className="text-3xl md:text-6xl font-black text-[#1A1A1A] mt-2 mb-6 leading-tight uppercase italic tracking-tighter">
             {noticia.title}
           </h1>
-          <p className="text-xl text-gray-500 italic mb-6 border-l-4 border-[#E6C62F] pl-4">
+          <p className="text-xl text-gray-500 italic mb-6 border-l-4 border-[#E6C62F] pl-4 bg-gradient-to-r from-yellow-50 to-white">
             {noticia.description}
           </p>
         </header>
 
-        <figure>
-          <div className="relative w-full h-[300px] md:h-[500px] overflow-hidden rounded-2xl shadow-xl bg-gray-100">
+        <figure className="w-full flex flex-col items-center">
+          <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400] md:w-[750px] overflow-hidden rounded-2xl shadow-xl bg-gray-100">
             {noticia.image?.url && (
               <Image
                 src={noticia.image.url}
                 alt={noticia.title}
                 fill 
-                className="object-contain"
+                className="auto"
                 priority />
               )}
           </div>

@@ -1,23 +1,25 @@
 @import "tailwindcss";
 
 /* Espaçamento para o conteúdo da matéria */
+.conteudo-materia h2, .conteudo-materia h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 5px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
 .conteudo-materia p {
   margin-bottom: 1rem; /* Distância entre parágrafos */
   line-height: 1.5;      /* Altura da linha para não ficar apertado */
   color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
 }
 
 .conteudo-materia strong {
   color: #1a1a1a;
   font-weight: 800;
-}
-
-.conteudo-materia h2, .conteudo-materia h3 {
-  margin-top: 2rem;
-  margin-bottom: 10px;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-style: italic;
 }
 
 .conteudo-materia ul {
